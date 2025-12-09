@@ -1,0 +1,27 @@
+package pages
+
+import "github.com/Yummiii/Nayu/web/templates"
+
+templ Index() {
+	@templates.Base() {
+		<div class="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+			@PostCard("First Post", "https://cdn.zuraaa.com/a.png")
+			@PostCard("Second Post", "https://cdn.zuraaa.com/a.png")
+			@PostCard("Third Post", "https://cdn.zuraaa.com/a.png")
+			@PostCard("First Post", "https://cdn.zuraaa.com/a.png")
+			@PostCard("Second Post", "https://cdn.zuraaa.com/a.png")
+			@PostCard("Third Post", "https://cdn.zuraaa.com/a.png")
+		</div>
+	}
+}
+
+templ PostCard(title string, image string) {
+	<div class="border border-zinc-800 rounded-lg p-4 mb-4">
+		<img src={ image } alt={ title } class="w-full h-auto rounded" loading="lazy" decoding="async"/>
+		<div class="mt-4 flex justify-between items-center">
+			<h2 class="text-2xl font-bold">{ title }</h2>
+			//timestamp
+			<span class="text-sm text-zinc-500">2 hours ago</span>
+		</div>
+	</div>
+}
