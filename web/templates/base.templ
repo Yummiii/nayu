@@ -1,5 +1,7 @@
 package templates
 
+import "github.com/Yummiii/Nayu/web/components"
+
 templ Base() {
 	<!DOCTYPE html>
 	<html lang="en" class="bg-zinc-950 text-stone-200">
@@ -10,10 +12,7 @@ templ Base() {
 			<script src="/assets/js/htmx.min.js" defer></script>
 		</head>
 		<body>
-			<nav class="w-full h-14 bg-zinc-950 border-b border-zinc-800 flex items-center px-4 space-x-4">
-				<a href="/">Home</a>
-				<a href="/about" class="p-2 hover:bg-zinc-700 rounded-sm">About</a>
-			</nav>
+			@components.Navbar()
 			<main>
 				{ children... }
 			</main>

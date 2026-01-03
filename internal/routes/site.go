@@ -7,4 +7,5 @@ import (
 
 func siteRoutes(r *gin.Engine) {
 	r.GET("/", handlers.IndexHandler())
+	r.GET("/login", handlers.LoginHandler())
 }
